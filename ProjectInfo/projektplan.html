@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>Naval Warfare: Preliminary Schedule and Definitions</title>
+<!-- Changed by: Mikael Stromberg, Fri Aug  9 12:52:27 1996 -->
+</head>
+
+<body bgcolor="#ffffff">
+<center><b><font size=7 color="#3333AA">BATTLESHIP: <i>The Horror of Naval Warfare</i></font></b><br>
+<p>
+<img src="Images/battleship.jpg"><img src="Images/pearl4.jpg"><img src="Images/destroyer.jpg"><br>   
+<font size=1><i>Note:</i> All of these pictures are public domain and found on the net. e.g. I made none of them.</font>
+</center>
+<p>
+<h1>Project Members</h1>
+<font size=4>
+<table width="100%">
+  <tr>
+    <td><b>name</b></td>
+    <td><b>email</b></td>
+    <td><b>phone</b></td>
+  </tr><tr>
+    <td>Rasmus Kaj</td>
+    <td><a href="mailto:kaj@it.kth.se">kaj@it.kth.se</a></td>
+    <td>08 <b>656 92 02</b></td>
+  </tr><tr>
+    <td>Michael Strömberg</td>
+    <td><a href="mailto:mikaels@it.kth.se">mikaels@it.kth.se</a></td>
+    <td>070 <b>717 2393</b></td>
+  </tr>
+</table>
+</font>
+<p>
+<h1>Project Definition</h1>
+<ol>
+<li>BATTLESHIP will be a distributed game which will allow two or more players
+to engage in naval warfare on the internet.</li>
+<p>
+<li>The BATTLESHIP concept revolves around the childhood game with a similar
+name. Here are the main phases of game play:</li>
+<p>
+<ul>
+<li>Players start on a grid (e.g. a 10x10 matrix) and select where to place their
+fleet. The fleet is usually comprised of a moderate number of ships for the matri
+size. (e.g. for a 10x10 matrix perhaps 4 ships would be a good choice)</li>
+<p>
+<li>The ships are now fixed and cannot be moved.</li>
+<p>
+<li>Above the matrix where the player has placed his fleet, is another matrix
+which starts out blank. This represents the matrix of his enemy. Turn by turn
+he will click on one of elements in the matrix. If that element corresponds to
+an element which is currently occupied by part of one of his enemy's ships, then
+it is a HIT. At this point the strategy usually dictates that player will look
+around that HIT region and find the rest of his ship. Otherwise it's a MISS
+in which case, the player will "randomly" fire on the matrix until he finally
+makes a HIT.</li>
+<p>
+<li>These melee turns proceed until one entire fleet is destroyed.</li>
+</ul>
+</ol>
+<h1>Technical Aspects</h1>
+<ol>
+<li>BATTLESHIP will be coded almost exclusively in PERL using CGI scripts. Some C
+code may be produced to speed up some of the graphics routines though.</li>
+<p>
+<li>For the first and second milestone, the matrix will be limited to only a 10x10
+matrix. In the future, We are planning on producing a larger matrix to accomodate
+a large fleet and/or many more players.</li>
+<p>
+<li>The graphics will be produced using Adobe Photoshop, Kai's Power Tools,
+Wavefront, and perhaps ntitle.</li>
+<p>
+<li>The sound segments will be short explosions and sound effects. We are assuming
+that everyone has the correct MIME types configured in they're web browser. However
+we plan on having an "Options Menu", where the player may choose silent mode or
+noisy mode.</li>
+<p>
+<li>For the first milestone, we just wanted to get the basic game engine running.
+Since we're not very familiar with sockets programing for perl or Java, We've decided
+that the first milestone will incorporate the use of temporary files which will 
+toggle on and off when players are waiting to play, player scores, etc. After the
+first milestone, we plan on spending two weeks studying sockets programming and 
+experiment on implementing it into the game play.</li>
+<p>
+<li>Later on, if time permits, we could introduce new "weapons" which could be
+used when the matrix becomes large, e.g. 100x100. A "spot radar" which would do 
+a radar sweep with a 5 element radius could be implemented to "aid" in locating
+other ships. We would have to experiment with how many such new "weapons" would
+be allowed per game.</li>
+<p>
+<li>The original BATTLESHIP only involved a tiny matrix and two players. Later
+a computerized one player version was introduced. Perhaps by the second milestone,
+We plan on introducing at least a third player if not many more.</li>
+<p>
+<li>Another added implementation is to allow a limited movement instead of an attack.
+This would allow the game to get more interesting. However then one would not be
+able to rely on the attack matrix unless it was revamped somehow.</li>
+<p>
+<li>Maybe adding some modern technology to fool some of the previously mentioned
+new "weapons" - stealth boats!!!!</li>
+</ol>
+<p>
+<h1>Project Schedule</h1>
+<table width="100%">
+  <tr>
+    <td><b>vecka</b></td>
+    <td><b>action</b></td>
+    <td><b>comments</b></td>
+  </tr><tr>
+    <td><hr></td>
+    <td><hr></td>
+    <td><hr></td>
+  </tr><tr>
+    <td>25</td>
+    <td>realize game engine, begin pseduocode</td>
+    <td></td>
+  </tr><tr>
+    <td>26</td>
+    <td>code in the game engine, work on graphics & sound</td>
+    <td></td>
+  </tr><tr>
+    <td>27</td>
+    <td>fine tuning and first phase playtesting</td>
+    <td>Milestone #1</td>
+  </tr><tr>
+    <td>28</td>
+    <td>learn sockets coding, elementary implementations</td>
+    <td></td>
+  </tr><tr>
+    <td>29</td>
+    <td>perfect sockets coding, final implementations</td>
+    <td></td>
+  </tr><tr>
+    <td>30</td>
+    <td>enhance the graphics and sound design</td>
+    <td></td>
+  </tr><tr>
+    <td>31</td>
+    <td>fine tuning and second stage playtesting</td>
+    <td>Milestone #2</td>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>Naval Warfare: Project Report</title>
+<!-- Changed by: Rasmus Kaj, Mon Aug  5 22:27:19 1996 -->
+<!-- Changed by: Mikael Stromberg, Tue Aug  6 23:37:24 1996 -->
+<!-- Changed by: Rasmus Kaj, Thu Aug  8 17:38:47 1996 -->
+<!-- Changed by: Mikael Stromberg, Fri Aug  9 12:49:29 1996 -->
+<!-- Changed by: Rasmus Kaj, Fri Aug  9 20:47:27 1996 -->
+<!-- Changed by: Mikael Stromberg, Sat Aug 10 20:46:22 1996 -->
+<!-- Changed by: Rasmus Kaj, Mon Aug 12 06:45:13 1996 -->
+</head>
+<body bgcolor="#FFFFFF" fgcolor="#000000">
+<a href="index.html"><img src="../Images/NavalWarfareSmall.jpg"
+border="0" alt="" align="left" hspace="20"></a>
+<img src="../Images/MUMSProjectReport.jpg" alt="Project Info" vspace="5"><br>
+<img src="../Images/NWByLineSmall.jpg" alt="by Rasmus Kaj and Michael Stromberg">
+<br clear="all"><hr noshade>
+<multicol cols="2">
+
+<h2>Project Definiton</h2>
+
+We aim to do a webversion on the old game 'battleship'. 'We' are:
+
+<blockquote><p><strong><a href="/~kaj/">Rasmus Kaj</a></strong>
+<a href="mailto:Rasmus Kaj &lt;kaj@it.kth.se&gt;">&lt;kaj@it.kth.se&gt;</a><br>
+<font size="-1">Tel: 08 656 9202 alt. 08 752 1474<br>
+S:t Göransg. 153, <font size="-1"><sup>823</sup></font><br>
+112 51  S<font size="-2">TOCKHOLM</font></font></p>
+
+<p><strong><a href="/~mikaels/">Michael Strömberg</a></strong>
+<a href="mailto:Michael Stromberg &lt;mikaels@it.kth.se&gt;">&lt;mikaels@it.kth.se&gt;</a><br>
+<font size="-1">Tel: 08 752 12 96<br>
+B<font size="-2">ROMMA</font></font></p>
+</blockquote>
+
+<h2>Preparations</h2>
+
+<p>We took a look at one or two implementations of the 'battlefield'
+game already implemented on the net. Seeing them we decided that
+<em>a)</em> they were too slow and <em>b)</em> they were too ugly. So
+we decided that we needed to implement the game in java.</p>
+
+<h2>The job</h2>
+
+After that basic design decision we got working. Unfortionatly the
+stuff we got working on is completley unrelated to <font
+face="ITC Avant Garde Gothic, Arial">Naval Warefare</font>, 
+since we both got more-than-fulltime jobs.
+
+<h2>The main Java program</h2>
+
+<p>We have split the javacode into two packages, <a
+href="doc/Package-sea.html">sea</a> and <a
+href="doc/Package-naval.html">naval</a>, with the partition defined as
+'everything that migth be used in for example a minesweeper' in sea
+and everything that is realy specific to <font
+face="ITC Avant Garde Gothic, Arial">Naval Warefare</font> in naval. The
+reason for this is that it should make the code cleaner and easier to
+understand, but also that I (Rasmus) plan to write that game,
+eventually. We also considered making a package (misc or something)
+for realy generic classes, but havent found the need for those classes
+yet. It might still arrive, however.</p>
+
+<p>The applet used on the 'one player game' page is
+<a href="doc/naval.OnePlayer.html#_top_">naval.OnePlayer</a> . It is a
+simple panel with a
+<a href="/mums/java/docs/api/java.awt.Label.html#_top_">Label</a> for
+status messages and the actual game, <a
+href="doc/naval.Naval.html#_top_">naval.Naval</a> as Components.</p>
+
+<h3>The game</h3>
+
+When the user clics the mouse in the game area Sea.mouseUp gets called
+by awt. It calculates the Coord that corresponds to the mousclic's
+position and calls Naval.touch (since Naval extends sea). . . Do I
+really have to get this detailed? There are <a href="src/">source
+code</a>, you know... 
+
+<h2>The Future of NW</h2>
+By no means are we finished just because the MUMS project deadline has
+arrived. During the whole process, Rasmus and I became so fanatical
+about NW, that we plan on continuing with the project in order to offer a cool,
+extremely high-bandwith game onto the Internet.
+
+<h3>Starters to the future</h3>
+<ul>
+  <li>More kinds of ships.</li>
+  <li>Get multiplayer going</li>
+  <li>Help for the users.</li>
+  <li>Animate explosions etc.</li>
+  <li>Anything suggested to us...</li>
+</ul>
+
+<h2>Summary of links</h2>
+<ul>
+  <li><a href="/spot/nw/"><b>THE GAME</b></a></li>
+  <li><a href="projektplan.html">Original Project Specification</a></li>
+  <li><a href="src/">The java source code</a></li>
+  <li><a href="http://media.it.kth.se/mums/java/docs/api/packages.html">Java
+      API</a></li>
+  <li><a href="doc/packages.html">Javadoc for our classes</a></li>
+  <li><a href="gallery.html"><font
+face="ITC Avant Garde Gothic, Arial">Naval Warfare</font> Ship Gallery</a></li>
+  <li><a href="graphics.html">The Graphics behind NW</a></li>
+  <li><a href="audio.html">Audio in NW</a></li>
+  <li><a href="../HistoricalInfo/index.html">Historical Info</a></li>
+  <li><a href="../Credits.html">Credits</a></li>
+  <li><a href="../MultiPlayer.html">MultiPlayer status</a></li>
+</ul>
+</multicol>
+<applet codebase="../code" code="NWAudio.class" width=0 height=0>
+<param name="sound" value="../sound/heresacoolgame.au">
+<param name="duration" value="once">
+</applet>
+
+<div align="right"><hr noshade><font size="-1">
+<!-- autodate --><em>Last modified: Mon Aug 12, 1996</em><!-- /autodate -->
+<address><a href="http://media.it.kth.se/~kaj/">Rasmus Kaj</a> &amp;
+<a href="http://media.it.kth.se/~mikaels/">Michael Strömberg</a></address>
+</font></div>
+
+</body>
+</html>

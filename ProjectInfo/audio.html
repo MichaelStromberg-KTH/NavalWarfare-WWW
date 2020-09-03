@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Naval Warfare: Project Report (Audio)</title>
+<!-- Changed by: Rasmus Kaj, Mon Aug 12 04:30:43 1996 -->
+</head>
+<body bgcolor="#FFFFFF" fgcolor="#000000">
+<a href="index.html"><img src="../Images/NavalWarfareSmall.jpg"
+border="0" alt="" align="left" hspace="20"></a>
+<img src="../Images/MUMSProjectReport.jpg" alt="Project Info" vspace="5"><br>
+<img src="../Images/NWByLineSmall.jpg" alt="by Rasmus Kaj and Michael Stromberg">
+<br clear="all"><hr noshade>
+<multicol cols="2">
+
+<h2>NW Audio</h2>
+<h3>NWAudio.java</h3>
+
+<p><dd>Initially I (Michael) did not intend on coding my own audio
+applet. I wanted to find one on the net and use it in NW. The problem
+was that the more I searched, the more I was displeased with the audio
+applets I found. So with some encouragement from Rasmus, I decided to
+code my own.</p>
+
+<p><dd>After a short while, I thought I had an audio applet... No
+sound, though. It turns out that our samples were 22kHz instead of
+8kHz and in aifc format instead of au format.... So with some help
+debugging from Rasmus, I eventually produced the NWAudio.java
+applet.</p>
+
+<p>Right now this applet accepts two parameters from the web page,
+duration and sound file. Duration tells whether or not to loop the
+sound, and the sound variable contains the sound file to be
+played.</p>
+
+<h3>SoundLib.java</h3>
+
+<p><dd>In addition to the audio applet found on the web pages, Rasmus
+coded an audio class into the one player game in order to produce
+our infamous sound effects. He didn't have as much trouble coding his
+class as I did with my applet...</p>
+
+<h3>Audio Samples</h3>
+
+<p><dd>The samples found in NW come from the PC game <b>"Beavis and
+Butt-head in Virtual Stupidity"</b>. This game was awesome and rich in
+sound samples. For test purposes, we decided to use the samples for
+MUMS evaluation only. In no way do we take credit for these
+samples. The samples are under copyright of
+<a href="http://www.viacom.com/">Viacom International, Inc.</a> and we
+are attempting to contact them for permission to use their samples in
+NW since this is for non-profit purposes.</p>
+
+<p><dd>We have edited the samples in order to keep them in context
+with the game, and have reduced their quality (from 22kHz to 8kHz) in
+order to play them in our Java audio clip code.</p>
+
+<h2>Important Links</h2>
+<ul>
+  <li><a href="doc/NWAudio.java">NWAudio.java Applet</a></li>
+  <li>class SoundLib: <a href="doc/naval.SoundLib.html">documentation</a> &amp;
+      <a href="src/naval/SoundLib.java">java source</a></li>
+</ul>
+
+</multicol>
+<div align="right"><hr noshade><font size="-1">
+<!-- autodate --><em>Last modified: Mon Aug 12, 1996</em><!-- /autodate -->
+<address><a href="http://media.it.kth.se/~kaj/">Rasmus Kaj</a> &amp;
+<a href="http://media.it.kth.se/~mikaels/">Michael Strömberg</a></address>
+</font></div>
+</body>
+</html>

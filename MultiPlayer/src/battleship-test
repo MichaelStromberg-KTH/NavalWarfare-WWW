@@ -1,0 +1,60 @@
+#!/opt/lang/perl5.003/bin/perl
+#
+# battleship-test is a perl script which accepts the queries from our NW 
+# multiplayer java script and processes them. This perl script will be the
+# central resource for organizing the players and the game environment in 
+# the game.
+# author: mikaels@it.kth.se
+
+
+# read_input was coded by someone else. read_input converts the typical post or
+# get DATA and separates them into an array which can be more easily searched.
+# A real lifesaver...
+
+sub read_input
+{
+    local (@pairs, $pair, $name, $value, %FORM);
+    # Read in text
+    $ENV{'REQUEST_METHOD'} =~ tr/a-z/A-Z/;
+    if ($ENV{'REQUEST_METHOD'} eq "POST")
+    {
+        read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
+    } else
+    {
+        $buffer = $ENV{'QUERY_STRING'};
+    }
+    # Split information into name/value pairs
+    @pairs = split(/&/, $buffer);
+    foreach $pair (@pairs)
+    {
+        ($name, $value) = split(/=/, $pair);
+        $value =~ tr/+/ /;
+        $value =~ s/%(..)/pack("C", hex($1))/eg;
+        $FORM{$name} = $value;
+    }
+    %FORM;
+}
+
+
+%data=read_input;
+
+# Apparently you need this first new line character, otherwise no output will
+# show in the Java script...
+
+print "\n";		
+
+# process queries
+
+# If the java script asks for how many players are waiting, which returns the
+# hard-coded value of 1.
+
+if ($data{'playersquery'} eq "?") {
+	print "1"
+} else {
+
+#	Our designated error code. Theoretically we could have 9999 players waiting
+#	someday, but probably not anytime soon...
+
+	print "9999"
+}
+

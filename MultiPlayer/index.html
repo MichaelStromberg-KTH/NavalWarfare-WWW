@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Naval Warfare: MultiPlayer Interface Test</title>
+<!-- Changed by: Mikael Stromberg, Tue Jul  2 11:57:02 1996 -->
+</head>
+
+<body bgcolor="#FFFFFF">
+<a href="../MultiPlayer.html"><img src="../Images/NavalWarfareSmall.jpg"
+border="0" alt="" align="left" hspace="20"></a>
+
+<img src="../Images/MultiPlayerGameLogo.jpg" alt="MultiPlayer Game" vspace="3"><br>
+<img src="../Images/NWByLineSmall.jpg" alt="By Rasmus Kaj & Michael Strömberg">
+<br clear="all"><hr noshade>
+<h2>Explanation</h2>
+<dd>This Java applet sends playersquery and a question mark to the Perl script asking
+it how many hypothetical players are waiting. At which point the Perl script will
+decode the query and send back a new line '\n' and then a 1 back to the Java script. 1
+being how many hypothetical players are waiting. The Java applet space is just an 
+analysis point after the Perl script has been queried and attempts to decode the information.
+<p>
+<dd>If you wish you can see other messages while initializing and sending data to the Perl script
+by activating the java console in your web browser.
+<p>
+<h4>Java Applet Results:</h4>
+<center>
+<applet code="MultiPlayer.class" width="350" height="100">
+</applet></center>
+<div align="right"><hr noshade><font size="-1">
+<!-- autodate --><em>Last modified: Sat Aug 10, 1996</em><!-- /autodate -->
+<address><a href="http://media.it.kth.se/~kaj/">Rasmus Kaj</a> &amp;
+<a href="http://media.it.kth.se/~mikaels/">Michael Strömberg</a></address>
+</font></div>
+</body>
+</html>

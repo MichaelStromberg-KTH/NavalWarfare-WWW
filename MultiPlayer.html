@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Naval Warfare: MultiPlayer Game</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+<a href="index.html"><img src="Images/NavalWarfareSmall.jpg"
+border="0" alt="" align="left" hspace="20"></a>
+
+<img src="Images/MultiPlayerGameLogo.jpg" alt="MultiPlayer Game" vspace="3"><br>
+<img src="Images/NWByLineSmall.jpg" alt="By Rasmus Kaj & Michael Strömberg">
+<br clear="all"><hr noshade>
+<multicol cols="2">
+<h2>Current Status:</h2>
+<dd>I (Michael) have been coding the MultiPlayer Java and Perl code while Rasmus has
+been working on the One Player code. I have started working on a java applet which
+will eventually be a component class in the Java game which will communicate with
+a central perl script on the media.it.kth.se server.
+<h3>Sequence of Events</h3>
+<dd>Here is the sequence of events that occurs when the MultiPlayer Interface Test
+is executed:
+<p>
+<ol>
+<li>MultiPlayer.class is loaded and initialized.</li>
+<li>Opens a socket to http://media.it.kth.se:80.</li>
+<li>Sends out the standard POST header with Content-type and Content-length</li>
+<li>Sends out the actual POST data (playersquery=?).</li>
+<li>Retrieves the response from the battleship-test perl script.</li>
+<li>Closes the socket.</li>
+<li>Proceeds to analyze the data and tests to see if 1 player is waiting.</li>
+<li>Outputs the results onto the screen.</li>
+</ol>
+<h3>The Code: Multiplayer.java & battleship-test</h3>
+<dd>I've managed to get the java applet to talk with the media.it.kth.se web server using a POST method to
+the Perl CGI script. The Perl script returns the information, and then my java applet
+stores the data (including the newline character "\n") into a variable called rdata (raw data).
+At this point I used the trim function to get rid of the newline character and then used 
+parseInt to read the string variable into an integer. Then it was a piece of cake. Then I
+was able to perform my if evaluations as usual..
+<h3>In the near future...</h3>
+<dd>As I see it, adding more functions to both the Java code and Perl script is trivial at this point.
+Now I have to convert this applet to a component which can be easily called from within our One Player
+class prototype. Then we can add some file storage features to the Perl script so that it can keep
+track of the player data. The main headache was interpreting the incoming data from the Perl script, 
+and now finally that's done.
+<p>
+<dd>The MultiPlayer code is not only responsible for organizing groups of people
+to play Naval Warfare, but also distributing the information to all of the players.
+Vital information such as sunken ships, bomb deployment, and ship deployment will be
+sent via the MultiPlayer code.
+<p>
+<dd>One reasonable way to do this is add a query to the Java and Perl code which asks
+for all recent changes in the Naval Warfare environment. This could be a polling function, but
+I would rather find another solution. Then we could add some logic to the Java code 
+and have it decide if it is the user's turn yet or if he has to wait for some more 
+players to move.
+<p>
+<dd>One special addition to the multiplayer code is time limitation. Since there 
+are many people eagerly waiting for their turn, we have decided to add a time limitation
+(possibly set by the user who created the group) for typically around 15 - 30 seconds.
+I believe 15 - 30 seconds is a reasonable amount of time to analyze where to bomb and 
+click on the hex grid.
+<p>
+<dd>Of course our small grid will not suit anymore than 3 players (even that is stretching 
+it a bit). So we will have a function determining the grid size according to the amount
+of players participating in the game.
+<h3>Important Links</h3>
+<ul>
+<li><a href="MultiPlayer/index.html">MultiPlayer Interface Test</a></li><br>
+<li><a href="MultiPlayer/src/MultiPlayer.java">Multiplayer.java source</a></li><br>
+<li><a href="MultiPlayer/src/battleship-test">battleship-test Perl source</a></li><br>
+</ul>
+</multicol>
+<div align="right"><hr noshade><font size="-1">
+<!-- autodate --><em>Last modified: Sat Aug 10, 1996</em><!-- /autodate -->
+<address><a href="http://media.it.kth.se/~kaj/">Rasmus Kaj</a> &amp;
+<a href="http://media.it.kth.se/~mikaels/">Michael Strömberg</a></address>
+</font></div>
+</body>
+</html>
