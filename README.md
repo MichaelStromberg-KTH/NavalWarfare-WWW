@@ -1,4 +1,4 @@
-# NavalWarfare-WWW
+![NavalWarfare-WWW](https://github.com/MichaelStromberg-KTH/NavalWarfare-WWW/blob/master/Images/NavalWarfareLogo.jpg?raw=true)
 
 Date: 1996-08-12
 
